@@ -33,6 +33,31 @@ copy a snapshot to and edge location from your main region.
 `ResourceDisk` (Temp disk).
 
 **Automatic in-guest patching support for VMSS.** You can now use the new `--patch-mode` parameter
-in `az vmss create` to onboard your scaled set virtual machines to [automatic in-guest patching](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching).
-Multiple options or possible for Windows and Linux VMs based on your needs. For more information,
+in `az vmss create` to onboard scaled set virtual machines to [automatic in-guest patching](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching).
+Multiple options are possible for Windows and Linux VMs based on your needs. For more information,
 check out the [az vmss documentation](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az_vmss_create).
+
+## Storage
+
+**Protected append support for immutable storage.** Customers can now create immutable storage
+containers with the ability to append blocks to a blob. This applies to time-based retention and
+legal hold policies. When creating the immutability policy for a storage container, you can use the
+new `--allow-protected-append-writes` and `--allow-protected-append-writes-all` flags to enable the
+ability. This doesn't enable modification of any sort to the existing content of storage containers
+and can only append to the end of the container. for more information check out the [az storage container doc](https://docs.microsoft.com/cli/azure/storage/container/immutability-policy?view=azure-cli-latest#az_storage_container_immutability_policy_create).
+
+**Update blob storage rehydration priority.** Customers can now use Azure CLI to update [archived blob storage rehydration](https://docs.microsoft.com/azure/storage/blobs/archive-rehydrate-overview)
+priority with `az storage --set-tier --tier`. For more information, see the [az storage blob documentation](https://docs.microsoft.com/cli/azure/storage/blob?view=azure-cli-latest#az_storage_blob_set_tier).
+
+**Support for no squash and all squash for NFS 3.0.**. Customers can now create or update an NFS 3.0
+container to enable or disable root squash with
+`az storage container-rm create/update --root-squash`. Acceptable values for `--root-squash` are
+`RootSquash`, `AllSquash`, and `NoSquash`. For more information, see the [NFS protocol how-to](https://docs.microsoft.com/azure/storage/blobs/network-file-system-protocol-support-how-to)
+and the [az storage container-rm](https://docs.microsoft.com/cli/azure/storage/container-rm?view)
+docs.
+
+## KeyVault
+
+**Define policy rules under which a key can be exported.** The `--policy` parameter has been
+released in public preview and customers can define policy rules using JSON or a JSON file. For more information, check out the [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault/key) doc.
+
