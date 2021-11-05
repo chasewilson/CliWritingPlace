@@ -71,9 +71,9 @@ doc.
 **Support for scale units and skus in Azure Bastion.** Customers can now set the scale units and
 sku's with Azure CLI when [creating an Azure Bastion host](https://docs.microsoft.com/azure/bastion/bastion-overview).
 
-## New Azure Logz.io Extension
+## New Azure Logz Extension
 
-[Logz.io](https://docs.microsoft.com/azure/partner-solutions/logzio/overview) is a SaaS to
+[Logz](https://docs.microsoft.com/azure/partner-solutions/logzio/overview) is a SaaS to
 centralize log, metric, and tracing analytics in one place. Customers can now manage MIcrosoft Logz
 with the `logz` extension. To install the extension, run `az extension add -n logz`. For more
 information about all the capabilities of the extension, checkout the [logz extension](https://docs.microsoft.com/cli/azure/logz)
