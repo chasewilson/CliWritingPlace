@@ -1,10 +1,10 @@
 
 # Microsoft Ignite Highlights: Azure CLI
 
-Hi everyone, as Microsoft Ignite wraps up today we’re sharing some of the latest features we released in the Azure CLI supporting
-various announcements for Microsoft Ignite. We also released several important updates to Azure CLI
-commands and improvements to our core platform services during the Ignite timeframe. Here are some
-of the exciting announcements and updates.
+Hi everyone! as Microsoft Ignite wraps up, we’re sharing some of the latest features we released in
+the Azure CLI supporting various announcements for Microsoft Ignite. We also released several
+important updates to Azure CLI commands and even a new extension. Here are some of the exciting
+announcements and updates.
 
 (NOTE: The Azure CLI commands in the format az command --parameter that are shown below are not
 intended to be run as is, they only show the key parameters that need to be used for the feature
@@ -59,5 +59,29 @@ docs.
 ## KeyVault
 
 **Define policy rules under which a key can be exported.** The `--policy` parameter has been
-released in public preview and customers can define policy rules using JSON or a JSON file. For more information, check out the [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault/key) doc.
+released for `az keyvault key create` in public preview and customers can define policy rules using JSON or a JSON file. For more information, check out the [az keyvault key](https://docs.microsoft.com/cli/azure/keyvault/key) doc.
 
+**Support for key rotation and key rotation policy**. Customers can now create and update key
+rotation policy as well as rotate keys based on key rotation policy using
+`az keyvault key rotation-policy` and `az keyvault key rotate`. For more information, see the [az keyvault key](https://docs.microsoft.com/cli/azure/keyvault/key)
+doc.
+
+## Network
+
+**Support for scale units and skus in Azure Bastion.** Customers can now set the scale units and
+sku's with Azure CLI when [creating an Azure Bastion host](https://docs.microsoft.com/azure/bastion/bastion-overview).
+
+## New Azure Logz.io Extension
+
+[Logz.io](https://docs.microsoft.com/azure/partner-solutions/logzio/overview) is a SaaS to
+centralize log, metric, and tracing analytics in one place. Customers can now manage MIcrosoft Logz
+with the `logz` extension. To install the extension, run `az extension add -n logz`. For more
+information about all the capabilities of the extension, checkout the [logz extension](https://docs.microsoft.com/cli/azure/logz)
+documentation. NOTE: The extension is currently experimental.
+
+## Wrap up
+
+There has been a ton of amazing work involved in releasing the latest version of Azure CLI. Along
+with a [new authentication library](https://techcommunity.microsoft.com/t5/azure-tools/azure-cli-migration-from-adal-to-msal/ba-p/2909427),
+there are more updates in the latest release and we would love to hear your [feedback](https://github.com/Azure/azure-cli/issues/new/choose)!
+Thank you for the continued support and we look forward to hearing from you.
