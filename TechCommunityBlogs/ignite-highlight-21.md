@@ -18,12 +18,13 @@ Azure CLI has released several updates to support the release including updated 
 an easier VMSS Flex creation experience and user friendly error messaging to help identify
 limitations when creating scale sets with flexible orchestration.
 
-**New `az vm/vmss --run-command` commands**. You now have more control over your [run-commands](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/run-command)
-using CLI. You can `create`, `delete`, and `update` **run-commands** for a VM, place the VM into a
+**New commands to enhance support for VM/VMSS `run-command`**. Customers now have more control over
+their [run-commands](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/run-command)
+using CLI. They can `create`, `delete`, and `update` **run-commands** for a VM, place the VM into a
 waiting state until a condition is met with `wait`, or get more information about your
 **run-commands** using `list` and `show`! `az vm run-command create`
 
-**Support for cross-region incremental snapshot copies.** You can now use `az snapshot --copy-start`
+**Support for cross-region incremental snapshot copies.** Customers can now use `az snapshot --copy-start`
 to create snapshots even when source and target regions are different. For example, if you need to
 copy a snapshot to and edge location from your main region.
 
@@ -32,10 +33,16 @@ copy a snapshot to and edge location from your main region.
 `--ephemeral-os-disk-placement` preview parameter. Available options are `CacheDisk` (Cache disk) and
 `ResourceDisk` (Temp disk).
 
-**Automatic in-guest patching support for VMSS.** You can now use the new `--patch-mode` parameter
+**Automatic in-guest patching support for VMSS.** Customers can now use the new `--patch-mode` parameter
 in `az vmss create` to onboard scaled set virtual machines to [automatic in-guest patching](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching).
 Multiple options are possible for Windows and Linux VMs based on your needs. For more information,
 check out the [az vmss documentation](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az_vmss_create).
+
+**New Commands to support gallery applications on VM, VMSS, and Azure Compute Gallery.** Customers
+can now manage their [VM applications](https://docs.microsoft.com/azure/virtual-machines/vm-applications)
+with new [az vm application](https://docs.microsoft.com/cli/azure/vm/application?view=azure-cli-latest)
+commands and manage Azure Compute Gallery (formerly known as Shared Image Gallery) applications with [new az sig gallery-application](https://docs.microsoft.com/cli/azure/sig/gallery-application)
+commands.
 
 ## Storage
 
@@ -43,8 +50,8 @@ check out the [az vmss documentation](https://docs.microsoft.com/cli/azure/vmss?
 containers with the ability to append blocks to a blob. This applies to time-based retention and
 legal hold policies. When creating the immutability policy for a storage container, you can use the
 new `--allow-protected-append-writes` and `--allow-protected-append-writes-all` flags to enable the
-ability. This doesn't enable modification of any sort to the existing content of storage containers
-and can only append to the end of the container. for more information check out the [az storage container doc](https://docs.microsoft.com/cli/azure/storage/container/immutability-policy?view=azure-cli-latest#az_storage_container_immutability_policy_create).
+ability. This doesn't enable modification to the existing content of storage containers and can only
+append to the end of the container. for more information check out the [az storage container doc](https://docs.microsoft.com/cli/azure/storage/container/immutability-policy?view=azure-cli-latest#az_storage_container_immutability_policy_create).
 
 **Update blob storage rehydration priority.** Customers can now use Azure CLI to update [archived blob storage rehydration](https://docs.microsoft.com/azure/storage/blobs/archive-rehydrate-overview)
 priority with `az storage --set-tier --tier`. For more information, see the [az storage blob documentation](https://docs.microsoft.com/cli/azure/storage/blob?view=azure-cli-latest#az_storage_blob_set_tier).
@@ -69,7 +76,7 @@ doc.
 ## Network
 
 **Support for scale units and skus in Azure Bastion.** Customers can now set the scale units and
-sku's with Azure CLI when [creating an Azure Bastion host](https://docs.microsoft.com/azure/bastion/bastion-overview).
+SKU's with Azure CLI when [creating an Azure Bastion host](https://docs.microsoft.com/azure/bastion/bastion-overview).
 
 ## New Azure Logz Extension
 
